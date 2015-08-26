@@ -6,10 +6,21 @@
     android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivityFragment"
     android:orientation="vertical">
 
-
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/tell_me_a_joke_from_java_library"
         android:id="@+id/btnJavaLib" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tell_me_a_joke_from_java_library_and_display_it_in_aar"
+        android:id="@+id/btnAndroidLib" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tell_me_a_joke_from_gce"
+        android:id="@+id/btnGCE" />
 </LinearLayout>

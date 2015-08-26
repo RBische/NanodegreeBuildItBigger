@@ -3,4 +3,6 @@
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="tell_me_a_joke_from_java_library">Tell me a joke from java library</string>
+    <string name="tell_me_a_joke_from_java_library_and_display_it_in_aar">Tell me a joke from java library and display it in aar</string>
+    <string name="tell_me_a_joke_from_gce">Tell me a joke from GCE</string>
 </resources>

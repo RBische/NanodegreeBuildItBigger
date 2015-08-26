@@ -1,5 +1,6 @@
 package fr.bischof.raphael.builditbigger;
 
+import android.content.Intent;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -11,6 +12,7 @@ import android.widget.Toast;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import fr.bischof.raphael.JokeSmith;
+import fr.bischof.raphael.jokereader.JokeReaderActivity;
 
 /**
  * A placeholder fragment containing a simple view.
@@ -18,6 +20,10 @@ import fr.bischof.raphael.JokeSmith;
 public class MainActivityFragment extends Fragment {
     @Bind(R.id.btnJavaLib)
     Button mBtnJavaLib;
+    @Bind(R.id.btnAndroidLib)
+    Button mBtnAndroidLib;
+    @Bind(R.id.btnGCE)
+    Button mBtnGCE;
     public MainActivityFragment() {
     }
 
@@ -35,7 +41,30 @@ public class MainActivityFragment extends Fragment {
         mBtnJavaLib.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getActivity(), JokeSmith.getARandomJoke(),Toast.LENGTH_LONG).show();
+                Toast.makeText(getActivity(), JokeSmith.getARandomJoke(), Toast.LENGTH_LONG).show();
+            }
+        });
+        mBtnAndroidLib.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(),JokeReaderActivity.class);
+                intent.putExtra(JokeReaderActivity.EXTRA_JOKE,JokeSmith.getARandomJoke());
+                startActivity(intent);
+            }
+        });
+        mBtnGCE.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                JokeRetriever retriever = new JokeRetriever();
+                retriever.setOnJokeLoadedListener(new JokeRetriever.OnJokeLoadedListener() {
+                    @Override
+                    public void onJokeLoaded(String joke) {
+                        Intent intent = new Intent(getActivity(),JokeReaderActivity.class);
+                        intent.putExtra(JokeReaderActivity.EXTRA_JOKE,joke);
+                        startActivity(intent);
+                    }
+                });
+                retriever.execute(getActivity());
             }
         });
     }
