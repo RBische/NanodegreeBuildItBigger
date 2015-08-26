@@ -1,27 +1,21 @@
 package fr.bischof.raphael.builditbigger;
 
 import android.content.Intent;
-import android.support.v4.app.Fragment;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.Toast;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
-import fr.bischof.raphael.JokeSmith;
 import fr.bischof.raphael.jokereader.JokeReaderActivity;
 
 /**
  * A placeholder fragment containing a simple view.
  */
 public class MainActivityFragment extends Fragment {
-    @Bind(R.id.btnJavaLib)
-    Button mBtnJavaLib;
-    @Bind(R.id.btnAndroidLib)
-    Button mBtnAndroidLib;
     @Bind(R.id.btnGCE)
     Button mBtnGCE;
     public MainActivityFragment() {
@@ -38,20 +32,6 @@ public class MainActivityFragment extends Fragment {
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        mBtnJavaLib.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(getActivity(), JokeSmith.getARandomJoke(), Toast.LENGTH_LONG).show();
-            }
-        });
-        mBtnAndroidLib.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getActivity(),JokeReaderActivity.class);
-                intent.putExtra(JokeReaderActivity.EXTRA_JOKE,JokeSmith.getARandomJoke());
-                startActivity(intent);
-            }
-        });
         mBtnGCE.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
