@@ -83,7 +83,7 @@ public class MainActivityFragment extends Fragment {
                         }
                     }
                 });
-                retriever.execute(getActivity());
+                retriever.execute();
             }
         });
         AdView mAdView = (AdView) view.findViewById(R.id.adView);

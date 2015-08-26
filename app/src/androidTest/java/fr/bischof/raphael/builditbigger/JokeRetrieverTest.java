@@ -20,7 +20,7 @@ public class JokeRetrieverTest extends AndroidTestCase {
                 signal.countDown();// notify the count down latch
             }
         });
-        retriever.execute(getContext());
+        retriever.execute();
         try {
             signal.await();// wait for callback
         } catch (InterruptedException e) {

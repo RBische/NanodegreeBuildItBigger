@@ -44,7 +44,7 @@ public class MainActivityFragment extends Fragment {
                         startActivity(intent);
                     }
                 });
-                retriever.execute(getActivity());
+                retriever.execute();
             }
         });
     }
