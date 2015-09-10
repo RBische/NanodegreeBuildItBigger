@@ -4,8 +4,8 @@ A joke teller app for Nanodegree courses
 You can find below some screenshots of the app.
 
 
-![alt tag](http://raphaelbischof.fr/joketeller1.png)
 ![alt tag](http://raphaelbischof.fr/joketeller2.png)
+![alt tag](http://raphaelbischof.fr/joketeller1.png)
 
 Pre-requisites
 --------------
